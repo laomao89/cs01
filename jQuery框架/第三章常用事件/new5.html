@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>移除事件</title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			#box{
+				width: 200px;height: 200px;border: 2px solid black;
+				margin: 50px auto;
+			}
+			#box p{
+				width: 100px;height: 100px;background: rgba(0,0,255,0.8);
+				margin: 50px auto;
+			}
+			button{
+				width: 100px;height: 50px;background: rgb(0,0,0);
+				margin: 0 auto;display: block;color: rgb(255,255,255);
+			}
+			
+		</style>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				//on()绑定多个不同事件，执行不同函数
+//				$("#box p").on({
+//					click:function(){console.log("鼠标点击了");},
+//					mouseenter:function(){console.log("鼠标移入了");},
+//					mouseleave:function(){console.log("鼠标移出了");}
+//				});
+
+				//如果计划只运行一次的事件，使用one方法
+				$("#box p").one({
+					click:function(){console.log("鼠标点击了");},
+					mouseenter:function(){console.log("鼠标移入了");},
+					mouseleave:function(){console.log("鼠标移出了");}
+				});
+
+				//off()方法用于移除通过on()方法添加的事件处理程序
+				$("button").on("click",function(){
+					//移除box绑定的事件
+//					$("#box p").off();//移除所有事件
+//					$("#box p").off("click");//移除指定某个事件
+//					$("#box p").off("click mouseleave mouseenter");//移除指定多个事件
+				})
+		});
+		</script>
+		
+	</head>
+	<body>
+		<div id="box">
+			<p></p>
+		</div>
+		<button>点击移除</button>
+	</body>
+</html>

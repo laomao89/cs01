@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>获取元素索引及元素遍历</title>
+		<style type="text/css">
+			span{
+				display: block;width: 200px;line-height: 30px;
+				text-align: center;margin-top: 20px;background: #ccc;
+				margin: 20px auto;cursor: pointer;
+			}
+			button{width: 200px;height: 50px;margin: 50px auto;display: block;}
+		</style>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				//获取元素索引:index()
+//				$("#box span").click(function(){
+//					var index =$(this).index();
+//					alert(index);
+//				});
+				
+				//each():为，每个匹配元素规定运行的函数，就是对元素进行遍历
+				//运行的函数可以接收正在遍历元素的索引
+				$("button").click(function(){
+					$("#box span").each(function(i){
+//						$(this).text("我要去哪儿网" + (i+1));
+						$(this).attr("class","zxw"+(i+1));
+					});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<span>51zxw1</span>
+			<span>51zxw2</span>
+			<span>51zxw3</span>
+			<span>51zxw4</span>
+			<span>51zxw5</span>
+			<span>51zxw6</span>
+		</div>
+		<button>按钮</button>
+	</body>
+</html>

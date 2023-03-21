@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>筛选子元素及后代元素</title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				//children()方法筛选出匹配表达式的子元素
+//				$("#box").children().css('color','blue');
+//				$("#box").children('#zxw2').css('color','blue');
+//				$("#box").children('.wyzxw2').css('color','blue');
+
+//				$("#box").children('[id]').css('color','blue');
+//				$("#box").children('[class]').css('color','blue');
+//				$("#box").children('[title]').css('color','blue');
+
+//				$("#box").children('[id="zxw1"]').css('color','blue');
+//				$("#box").children('[class="wyzxw1"]').css('color','blue');
+//				$("#box").children('[title="51zxw1"],[id="nav"]').css('color','blue');
+
+
+//				$("#box").children("span").css('color','blue');
+//				$("#box").children("p").css('color','blue');
+
+
+				//children()只会考虑子元素而不会考虑其它的后代元素
+//				$("#box").children("span,p").css('color','blue');
+//				$("#box").children("#zxw2").css('color','blue');//一定是子元素现在修改过后的#zxw2是#box的孙子元素而不是子元素
+				
+				//筛选出匹配表达式的后代元素
+//				$("#box").find("#zxw2").css('color','red');
+				$("#box").find("span").css('color','red');//不管你是多少后代元素都能找到
+			})
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<div id="zxw1">我要自学网1</div>
+			<span class="wyzxw1">我要自学网2</span>
+			<p title="51zxw1">我要自学网3</p>
+			<div>
+				<span id="zxw2">我要自学网5</span>
+			</div>
+			<p class="wyzxw2">我要自学网6</p>
+			<div title="51zxw2">我要自学网7</div>
+			<div>
+				<ul>
+					<li>
+						<p>
+							<span id="nav">我要自学网9</span>
+						</p>
+					</li>
+				</ul>
+			</div>
+			
+		</div>
+		
+	</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!--<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>-->
+		<title>指定按键触发事件</title>
+		<style type="text/css">
+			input{
+				color: #fff;background: black;
+			}
+		</style>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				//键盘事件主要用于输入时
+					//event_i:正在发生的键盘事件
+					//keyCode:按键编码
+				//1.指定某个按键按下时触发
+				$("input").keydown(function(event_i){
+					console.log(event_i.keyCode);
+					if(event_i.keyCode==13){
+						$("input").css('background','rgb(255,0,0)');
+					};
+				});
+				
+				//1.指定某个按键弹起时触发
+				$("input").keyup(function(event_i){
+					console.log(event_i.keyCode);
+					if(event_i.keyCode==8){
+						$("input").css('background','rgb(0,0,255)');
+					};
+				});
+				
+				
+			});
+		</script>
+		
+	</head>
+	<body>
+		姓名:<input type="text" placeholder="请输入你的真实姓名" />
+	</body>
+</html>

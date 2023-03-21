@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>单选框和复选框的专用选择方法</title>
+		<style type="text/css">
+			body{cursor: pointer;}
+			input{margin: 50px auto;}
+			button{width: 200px;height: 50px;display: block;}
+		</style>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$(function(){
+					$("button").click(function(){
+						//1.选择单选框元素   ：radio  选择所有单选框元素
+						//[type='radio']等同于 :radio
+//						var i = $("input[type='radio']");//常规方法
+//						var i = $("input:radio");
+//						console.log(i);
+
+						//2.选择复选框元素   ：checkbox  选择所有单选框元素
+						//[type='checkbox']等同于 :checkbox
+//						var i = $("input[type='checkbox']");//常规方法
+//						var i = $("input:checkbox");
+//						console.log(i);
+
+						//3.选择已被选中的单选框或复选框元素:checked
+						var i = $("input:radio:checked");
+						var x = $("input:checkbox:checked");
+						console.log(i);
+						console.log(x);
+					});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<!--单选框开始-->
+		<input type="radio" name="sex" value="1" checked="checked"/>男
+		<input type="radio" name="sex" value="0" />女
+		<input type="radio" name="sex" value="10" />第三方
+		<!--单选框结束-->
+		<br />
+		<!--复选框开始-->
+		<input type="checkbox" name="sg[]" value="1" checked="checked"/>葡萄
+		<input type="checkbox" name="sg[]" value="0" id="yy" />粒子
+		<input type="checkbox" name="sg[]" value="10" />橘子
+		<!--复选框结束-->
+		<br />
+		<button>点击</button>
+	</body>
+</html>

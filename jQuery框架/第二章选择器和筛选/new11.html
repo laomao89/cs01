@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>可见状态选择器</title>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				//选择可见的元素
+//				$("#box div:visible").css('color','blue');
+//				$("#box input:visible").css('color','blue');
+
+				//选择不可见的元素
+//				$("#box div:hidden").css("color",'red');
+//				$("#box div:hidden").css('display','block');
+//				$("#box input:hidden").css("color",'red');//不会显示,因为行内样式type属性指定了hidden
+//				$("#box input:hidden").css('display','block');//不会显示,因为行内样式type属性指定了hidden
+////				
+			})
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<div>我要自学网1</div>
+			<div style="display: none;">我要自学网2</div>
+			<input style="width: 300px;cursor: pointer;" type="text" placeholder="我是个糊涂蛋，上的当当不一样。" />
+			<br />
+			<input type="hidden"  placeholder="你今天上当了吗？" />
+		</div>
+	</body>
+</html>

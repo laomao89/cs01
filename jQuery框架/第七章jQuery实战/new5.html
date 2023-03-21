@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>横向无缝滚动效果优化</title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<style type="text/css">
+			#box{
+				width: 800px;height: 300px;margin: 100px auto;
+				position: relative;
+				overflow: hidden;
+			}
+			#box ul{
+				width: 4000px;height:300px;position: absolute;left:0;top: 0;
+			}
+			#box ul li{
+				width: 800px;height: 300px;float: left;
+				position: relative;
+			}
+			#box ul li img{
+				width: 800px;height: 300px;
+			}
+			#box ul li span{
+				font-size: 100px;color: red;position: absolute;top: 100px;left: 350px;
+			}
+		</style>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				function abc(){
+//					$("#box ul").append($("#box ul li").first().height(0).animate({height:"40px"},1000));
+
+					$("#box ul li:first").animate({width:"0px"},1000,function(){
+						$("#box ul").append($("#box ul li:first").width("800px"));
+					});
+						}
+				//定时器执行函数
+				var time = setInterval(abc,2000);
+				//鼠标移入box元素中，停止定时器
+				$("#box").mouseenter(function(){
+					clearInterval(time);
+				});
+				//鼠标移出box元素后，开始定时器
+				$("#box").mouseleave(function(){
+					time = setInterval(abc,2000);
+				});
+				
+			})
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<ul>
+				<li><a href="#">
+						<img src="https://pic.51zxw.net//NewAn/UploadFiles/20220905/202209050408355583.jpg"/>
+						<span>0</span>
+					</a></li>
+				<li><a href="#">
+						<img src="https://pic.51zxw.net//NewAn/UploadFiles/20220917/202209170515480915.jpg"/>
+						<span>1</span>
+					</a></li>
+				<li><a href="#">
+						<img src="https://pic.51zxw.net//NewAn/UploadFiles/20220924/202209241150240201.jpg"/>
+						<span>2</span>
+					</a></li>
+				<li><a href="#">
+						<img src="https://pic.51zxw.net//NewAn/UploadFiles/20220924/202209241158157026.jpg"/>
+						<span>3</span>
+					</a></li>
+				<li><a href="#">
+						<img src="https://pic.51zxw.net//NewAn/UploadFiles/20220831/202208310341478646.jpg"/>
+						<span>4</span>
+					</a></li>
+			</ul>
+		</div>
+	</body>
+</html>

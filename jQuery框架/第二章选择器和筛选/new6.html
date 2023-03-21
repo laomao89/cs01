@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>兄弟及父子选择器</title>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				//一般兄弟选择器,之前的选不中
+//				$("#zxw2~.zxw").css("color","red");
+
+				//相邻兄弟选择器//一定是相邻的指定元素
+//				$("#box #zxw2+div").css('color','red');
+//				$(".zxw+div").css('color','red');
+
+				//父子选择器
+				$("#box> .zxw").css('color','red');
+//				$("#box .zxw").css('color','red');//后代选择器
+			})
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<div id="zxw1">我要自学网1</div>
+			<p id="zxw2">我要自学网2</p>
+			<p class="zxw">新插入的一号元素</p>
+			<div id="zxw3">我要自学网3</div>
+			<p id="zxw4">我要自学网4</p>
+			<p class="zxw">新插入的二号元素</p>
+			<div id="zxw5">我要自学网5</div>
+			<p>
+				<span class="zxw">我要自学网6</span>
+			</p>
+			</div>
+		</div>
+	</body>
+</html>

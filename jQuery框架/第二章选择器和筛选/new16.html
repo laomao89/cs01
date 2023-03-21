@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>筛选兄弟元素</title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				//筛选出匹配表达式的所有兄弟元素siblings()
+//				$("#zxw").siblings().css('color','blue');//除了ID为zxw的所有兄弟元素
+//				$("#zxw").siblings("i").css('color','blue');//指定ID为zxw的兄弟元素i
+//				$("#zxw").siblings(".s").css('color','red');
+
+				//筛选出前面所有匹配表达式的兄弟元素
+//				$(".s").prevAll().css('color','blue');
+//				$(".s").prevAll("i").css('color','red');
+
+				//筛选出前面紧邻匹配表达式的兄弟元素
+//				$(".s").prev("div").css('color','red');
+
+				//筛选出后面所有匹配表达式的兄弟元素
+//				$(".s").nextAll().css('color','blue');
+//				$(".s").nextAll("i").css('color','red');
+
+				//筛选出前面紧邻匹配表达式的兄弟元素
+//				$(".s").next().css('color','red');
+				$(".s").next("strong").css('color','red');
+			})
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<div>我要自学网0</div>
+			<span>我要自学网1</span>
+			<div>我要自学网2</div>
+			<i>我要自学网3</i>
+			<div>我要自学网4</div>
+			<div id="zxw">我要自学网5</div>
+			<div class="s">我要自学网6</div>
+			<strong>我要自学网7</strong>
+			<div>我要自学网8</div>
+			<i>我要自学网3</i>
+			<div>我要自学网9</div>
+			<p>我要自学网10</p>
+		</div>
+	</body>
+</html>

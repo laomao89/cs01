@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>筛选父元素及祖先元素</title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				//筛选出匹配表达式的父元素parent()
+//				$("div #zxw2").parent().find("p").css('color','red');
+				//只会考虑父元素而不会考虑其他的祖先元素
+//				var b = $("span").parent();
+//				var b = $("span").parent("p");
+//				var b = $("span").parent(".zxw2");
+//				console.log(b);
+
+				//筛选出匹配表达式的祖先元素parents()
+//				$("span").parents().css('font-size',"50px");
+//				 var c = $("span").parents("#zxw1")
+				var c = $("span").parents("ul");
+				console.log(c)
+			})
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<div id="zxw1">
+				<div>我要自学网1</div>
+				<p title="51zxw1">
+					<span class="wyzxw1">我要自学网2</span>
+				</p>
+			</div>
+			<div>我要自学网3</div>
+			<div>
+				<span id="zxw2">我要自学网4</span>
+				<p class="wyzxw2">我要自学网5</p>
+			</div>
+			
+			<div title="51zxw2">我要自学网6</div>
+			
+			<div>
+				<ul>
+					<li>
+						<p class="zxw2">
+							<span id="nav">我要自学网7</span>
+						</p>
+					</li>
+				</ul>
+			</div>
+			
+		</div>
+	</body>
+</html>

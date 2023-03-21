@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>元素滑动显隐效果</title>
+		<style type="text/css">
+			#btn{width: 200px;height: 40px;}
+			/*img{display: none;}*/
+		</style>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#btn").click(function(){
+					//元素滑动显示效果   sildeDown()
+//					
+//					$("#sun").slideDown();
+//					$("#sun").slideDown(3000);
+//					$("#sun").slideDown(3000,function(){
+//						alert('图片加载完成');
+//					});
+
+					//元素滑动隐藏	slideUp()
+//					$("#sun").slideUp();
+//					$("#sun").slideUp(2000);
+//					$("#sun").slideUp(3000,function(){
+//						alert('图片隐藏完成');
+//					});
+					
+					//元素滑动显示隐藏自动切换方法 	slideToggle
+//					$("#sun").slideToggle(2000);
+					$("#sun").toggle(1500,function(){
+						alert('我会自动切换');
+					});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<button id="btn">按钮</button>
+		<br />
+		<img id="sun" src="img/sun.jpg" width="500px"/>
+	</body>
+</html>

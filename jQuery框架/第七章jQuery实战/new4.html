@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>横向无缝滚动效果优化</title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<style type="text/css">
+			#box{
+				width: 100px;height: 40px;margin: 100px auto;border: 1px solid #000;
+				position: relative;
+				/*overflow: hidden;*/
+			}
+			#box ul{
+				width: 300px;height:40px;position: absolute;left: 0px;top: 0;
+			}
+			#box ul li{
+				width: 100px;height: 40px;line-height: 40px;text-align: center;
+				float: left;
+			}
+		</style>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				function abc(){
+//					$("#box ul").append($("#box ul li").first().height(0).animate({height:"40px"},1000));
+
+					$("#box ul li:first").animate({width:"0px"},1000,function(){
+						$("#box ul").append($("#box ul li:first").width("100px"));
+					});
+						}
+				//定时器执行函数
+				var time = setInterval(abc,2000);
+				//鼠标移入box元素中，停止定时器
+				$("#box").mouseenter(function(){
+					clearInterval(time);
+				});
+				//鼠标移出box元素后，开始定时器
+				$("#box").mouseleave(function(){
+					time = setInterval(abc,2000);
+				});
+				
+			})
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<ul>
+				<li>我要自学网1</li>
+				<li>我要自学网2</li>
+				<li>我要自学网3</li>
+			</ul>
+		</div>
+	</body>
+</html>

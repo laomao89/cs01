@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>jQuery链式语法</title>
+		<style type="text/css">
+			span{display: block;font-size: 30px;cursor: pointer;}
+		</style>
+		
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#box span").click(function(){
+					//获取正在操作元素的索引
+					var index = $(this).index();
+					$(this).css("color","red").siblings().css("color","blue").parent().siblings().children().eq(index).css("color","red").siblings().css("color","blue");
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<span>我要自学网1</span>
+			<span>我要自学网2</span>
+			<span>我要自学网3</span>
+			<span>我要自学网4</span>
+			<span>我要自学网5</span>
+			<span>我要自学网6</span>
+			<span>我要自学网7</span>
+			<span>我要自学网8</span>
+		</div>
+		<br /><br /><br />
+		<div id="cox">
+			<span>我要自学网1</span>
+			<span>我要自学网2</span>
+			<span>我要自学网3</span>
+			<span>我要自学网4</span>
+			<span>我要自学网5</span>
+			<span>我要自学网6</span>
+			<span>我要自学网7</span>
+			<span>我要自学网8</span>
+		</div>
+	</body>
+</html>

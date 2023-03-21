@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>元素淡入淡出效果</title>
+		<style type="text/css">
+			#btn{width: 200px;height: 40px;}
+			/*img{display: none;}*/
+		</style>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#btn").click(function(){
+					//淡入淡出：通过元素透明度(opacity)的变化动态地显示或隐藏元素
+					//fadeIn()淡入	从透明变不透明
+//					$("#sun").fadeIn();
+//					$("#sun").fadeIn(3000);
+
+					//fadeOut()淡出	从不透明变透明
+//					$("#sun").fadeOut();
+//					$("#sun").fadeOut(3000);
+
+					//fadeToggle() 	淡入淡出自动切换
+//					$("#sun").fadeToggle();
+					$("#sun").fadeToggle(3000);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<button id="btn">按钮</button>
+		<br /><br />
+		<img id="sun" src="img/sun.jpg" width="500px"/>
+	</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>网站公告纵向滚动效果</title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<style type="text/css">
+			#new_gg{
+				width: 180px;height: 220px;margin: 100px auto;
+				background: rgba(0,0,0,0.5);border-radius: 10px;
+				color: #fff;
+			}
+			h2{
+				height: 60px;line-height: 60px;text-align: center;
+			}
+			#box{
+				width: 180px;height: 160px;position: relative;overflow: hidden;
+			}
+			#box ul{
+				width: 180px;position: absolute;left: 0;bottom: -80px;
+			}
+			#box ul li{
+				width: 180px;height: 40px;line-height: 40px;text-align: center;
+			}
+		</style>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				function abc(){
+					$("#box ul").append($("#box ul li").first().height(0).animate({height:"40px"},1000));
+				}
+				//定时器执行函数
+				var time = setInterval(abc,2000);
+				//鼠标移入box元素中，停止定时器
+				$("#box").mouseenter(function(){
+					clearInterval(time);
+				});
+				//鼠标移出box元素后，开始定时器
+				$("#box").mouseleave(function(){
+					time = setInterval(abc,2000);
+				});
+				
+			})
+		</script>
+	</head>
+	<body>
+		<div id="new_gg">
+			<h2>网站公告</h2>
+			<div id="box">
+				<ul>
+					<li>1号要去爬山</li>
+					<li>2号要去爬山</li>
+					<li>3号要去爬山</li>
+					<li>4号要去爬山</li>
+					<li>5号要去爬山</li>
+					<li>6号要去爬山</li>
+				</ul>
+			</div>
+		</div>
+	</body>
+</html>

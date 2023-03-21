@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>获取和设置元素内容</title>
+		<style type="text/css">
+			#box{
+				width: 200px;height: 200px;border: 2px solid black;
+				margin: 50px auto;text-align: center;
+			}
+			button{
+				width: 200px;height: 50px;margin: 0 auto;display: block;
+			}
+		</style>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				//获取元素内容，返回内容包含标签
+//				$("button").click(function(){
+//					var newa = $("#box").html();
+//					console.log(newa);
+//				});
+				
+				//设置元素内容，重写所有元素内容
+				$("button").click(function(){
+//					var newa = $("#box").html();
+					var new_receive = "<h2>你看我变化了吗？<h2>";
+					$("#box").html(new_receive);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<p>我要学习jQuery1</p>
+			<span>我要学习jQuery2</span>
+		</div>
+		<br />
+		<button>点击</button>
+	</body>
+</html>

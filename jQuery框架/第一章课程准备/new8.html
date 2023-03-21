@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>BOM对象和jQuery对象</title>
+		<style type="text/css">
+			div{font-size: 30px;}
+		</style>
+		
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				//两种对象的方法或属性不能混用
+				
+				
+				//---------------------------------------------
+				var a = $(".box");    //jQuery对象
+				var b = document.getElementsByClassName("cox");//DOM对象
+				
+				//DOM对象转成jQuery对象:用$()把DOM对象包起来
+//				$(b).css("color","red");
+				
+				//jQuery对象转成DOM对象:用.get(index)方法
+//				var DomA = a.get();
+//				for (var i=0;i<DomA.length;i++){
+//					DomA[i].style.color = "blue";
+//				};
+				a.get(1).style.color = "blue";
+				
+			})
+		</script>
+	</head>
+	<body>
+		<div class="box">我要自学网1</div>
+		<div class="box">我要自学网2</div>
+		<div class="box">我要自学网3</div>
+		<br />
+		<div class="cox">我要自学网4</div>
+		<div class="cox">我要自学网5</div>
+		<div class="cox">我要自学网6</div>
+	</body>
+</html>

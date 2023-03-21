@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!--<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>-->
+		<title>文本改变和提交表单事件</title>
+		<style type="text/css">
+			form{margin: 0 auto;width: 100px;}
+			input{color: #fff;background: rgb(0,0,0);}
+		</style>
+		<script src="../../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				//1.change事件，文本发生改变是触发，仅使用于文本域(用的并不多)
+//				$("input").change(function(){
+//					$(this).css('background','#ccc');
+//				})
+
+				//1.submit事件，提交表单时触发（非常重要）
+				$("form").submit(function(){
+					//1.获取输入的年龄
+					var age = $("#age").val();//var()方法目前没学
+//					alert(age);
+					//2.判断年龄是否满足条件
+					if (age<=65){
+						alert("您的年龄需满足领取退休保障金的条件65周岁，拒绝申请。");
+					};
+				});
+			});
+		</script>
+		
+	</head>
+	<body>
+		<form action="#" method="get">
+			姓名:<input type="text" placeholder="张三" />
+			<br />
+			地址:<input type="text" placeholder="北京"/>
+			<br />
+			年龄:<input type="text" id="age" placeholder="年龄需满足65周岁"/>
+			<br />
+			<input type="submit" value="提交" />
+		</form>
+	</body>
+</html>

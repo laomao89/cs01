@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>向页面加载数据</title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<style type="text/css">
+			#header{
+				font-size: 40px;font-weight: 700;margin: 20px auto;
+				text-align: center;
+			}
+			#zxw{
+				width: 1002px;margin: 50px auto;border: 1px solid black;
+			}
+			#top{
+				height: 40px;
+			}
+			#top .active{background: #0000FF;color: #FFFFFF;}
+			#top li{
+				width: 100px;height: 40px;line-height: 40px;background: #ccc;
+				float: left;margin-left: 10px;text-align: center;
+				cursor: pointer;
+			}
+			#bot{
+				height: 250px;
+			}
+			#bot li{
+				width: 240px;height: 240px;
+				float: left;margin: 5px;
+			}
+			#bot li a{
+				display: block;
+			}
+			#bot li a img{
+				width: 240px;height: 210px;border-radius: 10px;
+			}
+			#bot li a p{
+				line-height: 30px;text-align: center;font-weight: 700;
+			}
+		</style>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#top li").click(function(){
+					$(this).css({background:'#0000ff',color:'#fff'})
+					.siblings().css({background:'#ccc',color:'#000'});
+					
+					$.ajax({
+				 		type:"post",	//Ajax请求使用post方式
+				 		url:"http://127.0.0.1/new4.php",			//请求服务器地址
+				 		data:{			//发送到服务器的数据，JSON数据类型
+				 			'tjid':$(this).attr('data-id')
+				 		},
+				 		dataType:'json',//指定从服务器返回JSON数据类型
+				 		success:function(m){
+//				 			请求成功要执行的代码
+//							参数:从服务器返回的数据
+							console.log(m);
+							for (var i=0;i<m.length;i++){
+								$("#bot li").eq(i).children('a').attr('href',m[i][0])
+								.children('img').attr('src',m[i][1])
+								.siblings('p').text(m[i][2])
+							}
+				 		},
+				 		error:function(){
+				 			//请求失败要执行的代码
+				 			alert('请求失败');
+				 		}
+				 	})
+				})
+			})
+		</script>
+	</head>
+	<body>
+		<div id="header">热门推荐</div>
+		<div id="zxw">
+			<ul id="top">
+				<li class="active" data-id='1'>电脑办公</li>
+				<li data-id='2'>平面设计</li>
+				<li data-id='3'>室内设计</li>
+				<li data-id='4'>室外设计</li>
+			</ul>
+			<ul id="bot">
+				<li><a href="https://www.51zxw.net/list.aspx?cid=1053">
+					<img src="https://pic.51zxw.net/m/img/kcbm/1053.jpg"/>
+					<p>电脑新手入门教程</p>
+				</a></li>
+				<li><a href="https://www.51zxw.net/list.aspx?cid=1028">
+					<img src="https://pic.51zxw.net/m/img/kcbm/1028.jpg"/>
+					<p>Excel数据处理利器--M语言教程</p>
+				</a></li>
+				<li><a href="https://www.51zxw.net/list.aspx?cid=931">
+					<img src="https://pic.51zxw.net/m/img/kcbm/931.jpg"/>
+					<p>Excel实战技巧教程</p>
+				</a></li>
+				<li><a href="https://www.51zxw.net/list.aspx?cid=1009">
+					<img src="https://pic.51zxw.net/m/img/kcbm/1009.jpg"/>
+					<p>WPS JS宏编程教程</p>
+				</a></li>
+			</ul>
+		</div>
+	</body>
+</html>

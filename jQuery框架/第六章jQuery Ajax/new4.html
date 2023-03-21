@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>ajax()代码请求格式</title>
+		<style type="text/css">
+			h1{margin: 0 auto;text-align: center;}
+			#bbb{width: 500px;margin: 50px auto;}
+			#uname,#password{width: 400px;}
+			#an{display: block;margin: 0 auto;}
+		</style>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				 $("#an").click(function(){
+				 	$.ajax({
+				 		type:"post",	//Ajax请求使用post方式
+				 		url:"",			//请求服务器地址
+				 		data:{			//发送到服务器的数据，JSON数据类型
+				 			'键1':'值1',
+				 			'键2':'值2',
+				 		},
+				 		dataType:'json',//指定从服务器返回JSON数据类型
+				 		success:function(参数){
+//				 			请求成功要执行的代码
+//							参数:从服务器返回的数据
+				 		},
+				 		error:function(){
+				 			//请求失败要执行的代码
+				 		}
+				 		async:true
+				 	});
+				 })
+			})
+		</script>
+	</head>
+	<body>
+		<h1>登录</h1>
+		<div id="bbb">
+			账户:<input type="text" name="" id="uname" id="uname" value="" />
+			<br /><br />
+			密码:<input type="password" name="password" id="password" value="" />
+			<br /><br />
+			<input id="an" type="submit" value="提交" />
+		</div>
+	</body>
+</html>

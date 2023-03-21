@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>幻灯片自动播放</title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<style type="text/css">
+			#box{
+				width: 100%;height: 350px;margin-top: 100px;
+			}
+			.bg0{background: RGB(176,181,187);}
+			.bg1{background: RGB(32,92,250);}
+			.bg2{background: RGB(11,48,137);}
+			.bg3{background: RGB(181,12,17);}
+			.bg4{background: RGB(17,38,59);}
+			#slide{
+				width: 800px;height: 350px;margin:0 auto;position: relative;
+				overflow: hidden;
+			}
+
+			#aaa{width: 4800px; height:350px;position: absolute;top: 0;left: 0;}
+			#aaa li{float:left;}
+			#aaa li a{
+				display: block;width: 800px;height: 350px;position: relative;
+			}
+			#aaa li a img{
+				width: 100%;height: 100%;
+			}
+			/*-------------------------------------------------------------*/
+			#aaa li a span{
+				font-size: 150px;color: #FFFFFF;
+				position: absolute;top: 100px;left: 350px;
+			}
+			/*-----------------------------------------------------------------*/
+			#nav{
+				width: 200px;height: 12px;position: absolute;bottom: 10px;left: 50%;
+				margin-left: -50px;
+			}
+			#nav li{
+				width: 12px;height: 12px;border-radius: 50%;background: #ccc;float: left;
+				margin: 0 10px;cursor: pointer;margin-left: 2px;
+			}
+			#nav .active{background: RGB(34,34,34);}
+			
+			#prev,#next{
+				width: 25px;height: 50px;background: #fff;position: absolute;top: 150px;
+				cursor: pointer;	
+			}
+			#prev{left: 10px;}
+			#next{right: 10px;}
+			#prev img,#next img{
+				width: 100%;height: 100%;
+			}
+		</style>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				var n = 0;
+				var aaa = $("#aaa li");
+				var nav = $("#nav li");
+				//定义自动切换效果
+				function abc(){
+					n++;		//1
+					if(n==aaa.length){
+						$("#aaa").css({left:0});
+						n = 1;
+					};
+					
+					$("#aaa").animate({left:n*-800+'px'},500);
+					
+					if(n==nav.length){
+						nav.eq(0).addClass('active').siblings('li').removeClass('active');
+						$("#box").attr('class','bg0');
+					}else{
+						nav.eq(n).addClass('active').siblings('li').removeClass('active');
+						$("#box").attr('class','bg'+n);
+					}
+				}
+				//定时器执行函数
+				var time = setInterval(abc,2000);
+			})
+		</script>
+	</head>
+	<body>
+		<div id="box" class="bg0">
+			<div id="slide">
+				<ul id="aaa">
+					<li ><a href="#">
+						<img src="https://pic.51zxw.net//NewAn/UploadFiles/20220917/202209170515480915.jpg"/>
+						<span>0</span>
+					</a></li>
+					<li><a href="#">
+						<img src="https://pic.51zxw.net//NewAn/UploadFiles/20220905/202209050408355583.jpg"/>
+						<span>1</span>
+					</a></li>
+					<li><a href="#">
+						<img src="https://pic.51zxw.net//NewAn/UploadFiles/20220924/202209241150240201.jpg"/>
+						<span>2</span>
+					</a></li>
+					<li><a href="#">
+						<img src="https://pic.51zxw.net//NewAn/UploadFiles/20220924/202209241158157026.jpg"/>
+						<span>3</span>
+					</a></li>
+					<li><a href="#">
+						<img src="https://pic.51zxw.net//NewAn/UploadFiles/20220831/202208310341478646.jpg"/>
+						<span>4</span>
+					</a></li>
+					<li><a href="#">
+						<img src="https://pic.51zxw.net//NewAn/UploadFiles/20220917/202209170515480915.jpg"/>
+						<span>5</span>
+					</a></li>
+				</ul>
+				<!--下方小圆点-->
+				<ul id="nav">
+					<li class="active"></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+				<!--幻灯片左右耳朵-->
+				<div id="prev"><img src="img/prev.png"/></div>
+				<div id="next"><img src="img/next.png"/></div>
+			</div>
+		</div>
+	</body>
+</html>

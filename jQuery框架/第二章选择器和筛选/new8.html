@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>索引选择器</title>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				//一定要记得索引是从零开始的别犯这种低级错误呀兄弟
+//				$("#box div:odd").css('color','red');//奇数
+//				$("#box div:even").css('color','red')//偶数
+//				$("#box div:eq(3)").css('color','red');//给定索引值
+//				$("#box div:gt(7)").css('color','blue');//大于给定索引值以后的所有的元素，却不包含给定索引值哦
+				$("#box div:lt(7)").css('color','blue');//小于给定索引值以后的所有的元素，却不包含给定索引值哦
+			})
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<div>我要自学网0</div>
+			<div>我要自学网1</div>
+			<div>我要自学网2</div>
+			<div>我要自学网3</div>
+			<div>我要自学网4</div>
+			<div>我要自学网5</div>
+			<div>我要自学网6</div>
+			<div>我要自学网7</div>
+			<div>我要自学网8</div>
+			<div>我要自学网9</div>
+			<div>我要自学网10</div>
+			<div>我要自学网1</div>
+			<div>我要自学网2</div>
+			<div>我要自学网3</div>
+			<div>我要自学网4</div>
+			<div>我要自学网5</div>
+			<div>我要自学网6</div>
+			<div>我要自学网7</div>
+			<div>我要自学网8</div>
+			<div>我要自学网9</div>
+			<div>我要自学网10</div>
+		</div>
+	</body>
+</html>

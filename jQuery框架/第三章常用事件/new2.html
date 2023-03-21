@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>鼠标移动事件</title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			#box{
+				width: 200px;height: 200px;border: 2px solid black;
+				margin: 50px auto;
+			}
+			#box p{
+				width: 100px;height: 100px;background: rgba(0,0,255,0.8);
+				margin: 50px auto;
+			}
+		</style>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+//				鼠标移入元素上方事件
+//				$("#box").mouseover(function(){
+//				//	$("#box p").css('background','red');
+//					console.log("鼠标移入元素上方");
+//				});
+
+				
+				//鼠标移出元素上方事件
+//				$("#box").mouseout(function(){
+//			//		$("#box p").css('background','red');
+//					console.log("鼠标移出元素上方");
+//				});
+				
+				//鼠标移入元素范围内事件
+//				$("#box").mouseenter(function(){
+//					console.log("鼠标移入元素范围")
+//				});
+				
+				//鼠标移出元素范围内事件
+//				$("#box").mouseleave(function(){
+//					console.log("鼠标移出元素范围")
+//				});
+
+				//鼠标在元素范围内移动事件(不断触发)
+				$("#box").mousemove(function(){
+					console.log("不断触发")
+				});
+		});
+		</script>
+		
+	</head>
+	<body>
+		<div id="box">
+			<p></p>
+		</div>
+	</body>
+</html>

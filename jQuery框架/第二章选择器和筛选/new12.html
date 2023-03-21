@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>筛选表达式匹配的元素</title>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+//				$("#box div.wyzxw1").css('color','red');
+//				$("#box div").filter('#zxw2').css('color','red');
+				
+//				$("#box div").filter('[id]').css('color','red');
+//				$("#box div").filter('[class]').css('color','red');
+//				$("#box div").filter('[title]').css('color','red');
+
+//				$("#box div").filter('[id="zxw2"]').css('color','red');
+//				$("#box div").filter('[class="wyzxw2"]').css('color','red');
+//				$("#box div").filter('[title="51zxw1"]').css('color','red');
+
+//				$("#box div").filter('[class="wyzxw2"],[title="51zxw2"]').css('color','red');
+//				$("#box div").filter("[id='zxw1'],[title='51zxw2']").css('color','blue');
+
+				$(".slide-content-box div").filter("[class]").css('color','blue');
+				
+				
+				
+				
+			})
+		</script>
+	</head>
+	<body>
+		<!--<div id="box">
+			<div id="zxw1">我要自学网1</div>
+			<div class="wyzxw1">我要自学网2</div>
+			<div title="51zxw1">我要自学网3</div>
+			<div>我要自学网4</div>
+			<div id="zxw2">我要自学网5</div>
+			<div class="wyzxw2">我要自学网6</div>
+			<div title="51zxw2">我要自学网7</div>
+			<div>我要自学网8</div>
+		</div>-->
+		 <div class="slide-content-box">
+            <div class="article-copyright">
+                <div class="creativecommons">
+                	版权声明：本文为博主原创文章，遵循<a href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener"> CC 4.0 BY-SA </a>版权协议，转载请附上原文出处链接和本声明。
+                </div>
+                <div class="article-source-link">
+                	 本文链接：<a href="https://blog.csdn.net/pamdora/article/details/81116699"target="_blank">https://blog.csdn.net/pamdora/article/details/81116699</a>
+                </div>
+            </div>
+        </div>
+	</body>
+</html>

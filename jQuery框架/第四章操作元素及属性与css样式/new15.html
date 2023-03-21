@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>获取鼠标相对于当前视口的位置</title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			#box{
+				width: 400px;height: 400px;border: 2px solid black;
+				margin: 50px auto;
+				
+			}
+			#box p{
+				width: 200px;height: 200px;margin: 100px auto;
+				background: red;
+			}
+			
+</style>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				//获取鼠标位置的两个属性pageX 和pageY
+				//pageX和pageY必须与事件绑定。接收事件对象
+				
+				//获取鼠标相对于当前视口的位置
+//				$(window).mousemove(function(i){
+				$(document).mousemove(function(i){
+					var x = i.pageX;	//左侧偏移值	（x轴）
+					var y = i.pageY;	//上方偏移值	（y轴）
+					$("title").html(x+'||'+y);
+				})
+			});
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<p></p>
+		</div>
+		<br />
+	</body>
+</html>

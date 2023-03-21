@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+		<title>触摸事件</title>
+		<!--<link rel="stylesheet" type="text/css" href="../css/reset.css"/>-->
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			#box{
+				width: 200px;height: 200px;border: 2px solid black;
+				margin: 50px auto;
+			}
+			#box p{
+				width: 100px;height: 100px;background: rgba(0,0,255,0.8);
+				margin: 50px auto;
+			}
+			button{
+				width: 100px;height: 50px;background: rgb(0,0,0);
+				margin: 0 auto;display: block;color: rgb(255,255,255);
+			}
+			
+		</style>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				//*********触摸事件必须写在监听事件中才能生效************
+				//触摸事件主要用于移动端
+				//触摸事件应使用事件监听方法
+				//1.touchstart事件.当手指触摸元素时触发
+//				$("button").on("touchstart",function(){
+//					$("#box p").css('background','red');
+//				})
+				
+				//2.touchend事件，手指触摸结束
+//				$("button").on("touchend",function(){
+//					$("#box p").css('background','red');
+//				})
+
+				//3.touchmove事件，拖动（手指在触摸屏上移动）,不断的触发
+				$("button").on("touchmove",function(){
+					console.log("我移动了");
+				})
+			});
+		</script>
+		
+	</head>
+	<body>
+		<div id="box">
+			<p></p>
+		</div>
+		<button>点击移除</button>
+	</body>
+</html>

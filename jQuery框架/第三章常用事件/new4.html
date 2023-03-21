@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>绑定不同的事件执行不同的函数</title>
+		<style type="text/css">
+			*{margin: 0;padding: 0;}
+			#box{
+				width: 200px;height: 600px;border: 2px solid black;
+				margin: 50px auto;
+			}
+			#box p{
+				width: 100px;height: 100px;background: rgba(0,0,255,0.8);
+				margin: 50px auto;
+			}
+		</style>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				//鼠标在元素范围内移动事件(不断触发)
+//				$("#box").mousemove(function(){
+//					console.log("不断触发")
+//				});
+
+				//事件监听
+				//on(),可以有4个参数
+				//在选择元素上绑定了一个或多个事件
+					//第1个参数为事件名
+					//第2个参数为选择器，筛选后代元素(可选参数，用得少)
+					//第3个参数为传递数据给事件处理函数(可选参数，用得少)
+					//第4个参数为事件处理函数
+					
+//				//1.常用的方式
+//				$("#box").on("click",function(){
+//					console.log("鼠标点击了")
+//				})
+
+				//2.一个元素绑定多种事件
+//				$("#box").on("click mouseout",function(){
+//					console.log("鼠标点击了")
+//				})
+				
+				//3.筛选后代元素，多个元素可以绑定多种事件
+//				$("#box p").on("click",function(){
+//					console.log("鼠标点击了")
+//				})
+//				$("#box").on("click","p",function(){
+//					console.log("鼠标点击了")
+//				})
+
+				//4.第3个参数为传递数据给事件处理函数
+//				$("#box").on("click","p",{zxw:"yellow"},function(i){
+//					$("#box p").css("background",i.data.zxw);
+//				});
+
+				//绑定不同事件执行不同函数
+//				$("#box p").on({
+//					click:function(){
+//						console.log("鼠标点击了");
+//					},
+//					mouseenter:function(){
+//						console.log("鼠标移入了");
+//					},
+//					mouseleave:function(){
+//						console.log("鼠标移出了");
+//					}
+//				});
+
+				$("#box p").on({
+					click:function(){console.log("鼠标点击了");},
+					mouseenter:function(){console.log("鼠标移入了");},
+					mouseleave:function(){console.log("鼠标移出了");}
+				});
+		});
+		</script>
+		
+	</head>
+	<body>
+		<div id="box">
+			<p></p>
+			<p></p>
+			<p></p>
+		</div>
+	</body>
+</html>

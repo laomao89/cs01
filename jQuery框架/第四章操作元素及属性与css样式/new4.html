@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>添加和切换元素类名</title>
+		<style type="text/css">
+			#box{
+				width: 200px;height: 200px;border: 2px solid black;
+				margin: 50px auto;text-align: center;
+			}
+			button{
+				width: 200px;height: 50px;margin: 0 auto;display: block;
+			}
+			.zxw{font-size: 30px;}
+			.zxw1{color: red;}
+			.zxw2{font-weight: 900;}
+		</style>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				//删除元素属性
+				//removeAttr()必须传参,且不能删除全部
+//				$("button").click(function(){
+//					var newa = $("#box p").removeAttr("id");
+//					var newa = $("#box p").removeAttr("id title");
+
+//				});
+				
+				//删除元素类名
+				$("button").click(function(){
+//					var newa = $("#box p").removeClass("zxw");
+//					var newa = $("#box p").removeClass("zxw1 zxw2");
+					//可以删除全部不带参
+					var newa = $("#box p").removeClass();
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<p class="zxw zxw1 zxw2" title="new.com" id="new">我要学习jQuery1</p>
+			<span>我要学习jQuery2</span>
+		</div>
+		<br />
+		<button>点击</button>
+	</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>获取和设置元素内容</title>
+		<style type="text/css">
+			#box{
+				width: 200px;height: 200px;border: 2px solid black;
+				margin: 50px auto;text-align: center;
+			}
+			span{display: block;}
+			p{width: 200px;height: 30px;margin: 20px auto;background: black;color: #fff;}
+			button{
+				width: 200px;height: 50px;margin: 0 auto;display: block;
+			}
+		</style>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				
+				$("button").click(function(){
+					//内部插入
+//					//向元素内最后追加内容 apped()
+//					$("#box").append("<span style='color: red;'>我要学习jQuery4</span>");
+//					$("#box").append($("p"));	//原来的元素会消失
+
+					//把元素追加到指定的元素内部最后 appendTo()
+//					$("<span style='color: red;'>我要学习jQuery4</span>").appendTo($("#box"));
+
+//					$("p").appendTo($("#box"));	//原来的元素会消失
+//					$("p").appendTo("#box");	//虽可以实现一样的效果但是还是不建议这么写
+
+
+
+					//向元素内最前追加内容 prepend()
+//					$("#box").prepend("<span style='color: red;'>我要学习jQuery4</span>");
+//					$("#box").prepend($("p"));
+
+					//把元素追加到指定的元素内部的最前方  prependTo()
+//					$("<span style='color: red;'>我要学习jQuery4</span>").prependTo($("#box"));
+//					$("<span style='color: red;'>我要学习jQuery4</span>").prependTo("#box");
+//					$("p").prependTo($("#box"));
+					$("p").prependTo('#box');
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<span>我要学习jQuery0</span>
+			<span>我要学习jQuery1</span>
+			<span>我要学习jQuery2</span>
+			<span>我要学习jQuery3</span>
+		</div>
+		<p>我是追加的元素</p>
+		<button>点击</button>
+	</body>
+</html>

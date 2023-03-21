@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>元素显隐自动切换</title>
+		<style type="text/css">
+			#btn{width: 200px;height: 40px;}
+			/*img{display: none;}*/
+		</style>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#btn").click(function(){
+					//元素隐藏效果   hide()
+//					$("#sun").css('display','block');
+//					$("#sun").hide();
+//					$("#sun").hide(5000);
+//
+//					$("#sun").hide(3000,function(){
+//						alert('图片加载完成');
+//					});
+
+					//元素显隐自动切换
+					var v = $("#sun").css('display');
+					if (v =='none') {
+						$("#sun").show(2000);
+					}else{
+						$("#sun").hide(2000);
+					};
+					
+					//jQuery自动切换方法 	同样可传那三个参数
+//					$("#sun").toggle(2000);
+//					$("#sun").toggle(1500,function(){
+//						alert('我会自动切换');
+//					});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<button id="btn">按钮</button>
+		<br />
+		<img id="sun" src="img/sun.jpg" width="500px"/>
+	</body>
+</html>

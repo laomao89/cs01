@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>后代并集交集选择器</title>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				//后代选择器：不仅是子元素s
+//				console.log($("#zxw1 p"))
+//				$("#zxw1 p").css('color','red');
+//				$("#zxw2 .wyzxw").css('color','blue');
+
+				//并集选择器
+//				$("#zxw1 p,#zxw2 .wyzxw").css('color','red');
+
+				//交集选择器
+				$("#zxw1 p.wyzxw").css('color','red');
+				
+			})
+		</script>
+	</head>
+	<body>
+		<div id="zxw1">
+			<div class="wyzxw">我要自学网1</div>
+			<div class="wyzxw">我要自学网2</div>
+			<div class="wyzxw">我要自学网3</div>
+			<p class="wyzxw">我要自学网4</p>
+			<p>我要自学网5</p>
+		</div>
+		<div id="zxw2">
+			<div class="wyzxw">我要自学网6</div>
+			<div class="wyzxw">我要自学网7</div>
+			<div class="wyzxw">我要自学网8</div>
+			<!--<img class="img" src="img/757.jpg"/>-->
+			<p>我要自学网9</p>
+			<p>我要自学网10</p>
+		</div>
+	</body>
+</html>

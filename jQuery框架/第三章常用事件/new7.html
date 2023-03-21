@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!--<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>-->
+		<title>键盘事件</title>
+		<style type="text/css">
+			input{
+				color: #fff;background: black;
+			}
+		</style>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				//键盘事件主要用于输入时
+				
+				//1.keydown按键按下
+//				$("input").keydown(function(){
+//					$("input").css('background','#ccc');
+//				});
+				
+				//1.keyup按键弹起
+//				$("input").keyup(function(){
+//					$("input").css('background','#fff');
+//				});
+
+				//事件监听绑定不同的事件执行不同的方法
+				$("input").on({
+					keydown:function(){$("input").css('background','red');},
+					keyup:function(){$("input").css('background','blue')}
+				})
+			});
+		</script>
+		
+	</head>
+	<body>
+		姓名:<input type="text" placeholder="请输入你的真实姓名" />
+	</body>
+</html>

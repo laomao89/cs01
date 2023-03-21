@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>获取复选框value及操作选中状态</title>
+		<style type="text/css">
+			body{margin: 0;padding: 0;}
+			#box{
+				width: 600px;height: 50px;text-align: center;
+				cursor: pointer;border: 2px solid black;
+				margin: 0 auto;
+			}
+			h2{text-align: center;}
+			input{margin: 20px auto;}
+			button{width: 200px;height: 50px;display: block;margin: 0 auto;}
+		</style>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$(function(){
+					$("button").click(function(){
+						//1.获取复选框的value值
+//						var sg = [];
+//						$("input:checkbox:checked").each(function(){
+//							sg.push($(this).val());
+//						});
+//						console.log(sg);
+
+						//2.设置复选框选中状态;
+//						$("input:radio[value='27']").attr("checked","checked").siblings().removeAttr("checked");//单选框
+						$("input:checkbox").removeAttr("checked").filter("[value='ll'],[value='xg'],[value='xj']").attr("checked","checked");
+						
+					});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<h2>您想吃些什么水果?</h2>
+		<!--复选框开始-->
+		<div id="box">
+			<input type="checkbox" name="sg[]" value="pt" checked="checked"/>葡萄
+			<input type="checkbox" name="sg[]" value="lz" />李子
+			<input type="checkbox" name="sg[]" value="jz" />橘子
+			<input type="checkbox" name="sg[]" value="bl" />菠萝
+			<input type="checkbox" name="sg[]" value="xg" />西瓜
+			<input type="checkbox" name="sg[]" value="xj" />香蕉
+			<input type="checkbox" name="sg[]" value="ll" />榴莲
+			<input type="checkbox" name="sg[]" value="hmg" id="yy" />哈密瓜
+			<input type="checkbox" name="sg[]" value="yt" />樱桃
+		</div>
+		<!--复选框结束-->
+		<br />
+		<button>点击</button>
+	</body>
+</html>

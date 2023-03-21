@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>热门职业区块点击切换</title>
+		<link rel="stylesheet" type="text/css" href="../css/reset.css"/>
+		<style type="text/css">
+			.content-box{width: 1200px;height: 500px; margin: 0 auto;}
+			.m-title{
+				width: 100%;height: 80px;line-height: 80px;text-align: center;font-size: 30px;
+				font-weight: 400;background: url('https://www.51zxw.net/Contents/Images/redline.png') no-repeat center;
+			}
+			#new{background: RGB(243,243,243);}
+			/*名师简介开始*/
+			.msjj{
+				padding-top: 20px;padding-bottom: 40px;
+				position: relative;
+			}
+			.ms-box{
+				position: absolute;top: 100px;left: 0;
+			}
+			#aaa{z-index: 2;}
+			#bbb{}
+			.ms-box a{
+				display: block;width: 270px;height: 310px;float: left;
+				margin: 20px 15px;padding-top: 25px;text-align: center;
+				border-radius: 7px;
+			}
+			.ms-box a img{
+				width: 210px;height: 210px;border-radius: 50%;
+			
+			}
+			.ms-box a p{
+				font-size: 25px;line-height: 80px;color: #fff;
+				
+			}
+			#nav{
+				width: 100px;height: 20px;position: absolute;bottom: 25px;left: 51%;margin-left: -50px;
+				
+			}
+			#nav p{
+				width: 10px;height: 10.2px;border-radius: 50px;background: #ccc;
+				margin: 5px 10px;float: left;cursor: pointer;
+			}
+			#nav .active{
+				width: 30px;background: RGB(58,135,206);
+			}
+			/*名师简介结束*/
+		</style>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				var c = 0;
+				var aaa = $('#new .ms-box');
+				//定义自动切换效果
+				function abc(){
+					c++;
+					if(c==aaa.length){
+						c = 0;
+					}
+//					console.log(c);
+					aaa.eq(c).show().siblings(".ms-box").hide();
+					
+					//字符串值无法创建动画(比如‘background-color:red’)
+					$("#nav p").eq(c).animate({width:'30px'},500).css({backgroundColor:' RGB(58,135,206)'})
+					.siblings('p').css({backgroundColor:'#ccc',width:'10px'})
+				}
+				
+				//定义单击小圆点切换效果
+				function n_abc(n){
+					c = n.index(); //只改了这一行代码
+					aaa.eq(c).show().siblings(".ms-box").hide();
+					
+					//字符串值无法创建动画(比如‘background-color:red’)
+					$("#nav p").eq(c).animate({width:'30px'},500).css({backgroundColor:' RGB(58,135,206)'})
+					.siblings('p').css({backgroundColor:'#ccc',width:'10px'})
+				}
+				
+				
+				//定时器执行函数
+				var time = setInterval(abc,8000);
+				//鼠标移入box元素中，停止定时器
+				$("#new").mouseenter(function(){
+					clearInterval(time);
+				});
+				//鼠标移出box元素后，开始定时器
+				$("#new").mouseleave(function(){
+					time = setInterval(abc,2000);
+				});
+				
+				//定义单击小圆点的事件
+				$("#nav p").click(function(){
+					n_abc($(this));
+				})
+			})
+		</script>
+	</head>
+	<body>
+	<!--名师简介开始-->
+	<div id="new">
+		<div class="msjj content-box">
+			<h3 class="m-title">热门职业</h3>
+			<!--<p style="text-align: center;font-size: 20px;">专业讲师为你带来实用易懂的视频教程</p>-->
+			<div class="ms-box clearfix"id="aaa">
+				<a href="#" style="background: RGB(206,58,124);">
+					<img src="https://pic.51zxw.net/Contents/Images/pic5.jpg" />
+					<p>文秘/办公人员</p>
+				</a>					
+				<a href="#" style="background: RGB(58,206,149);">
+					<img src="https://pic.51zxw.net/Contents/Images/pic6.jpg" />
+					<p>会计从业人员</p>
+				</a>
+				<a href="#" style="background: RGB(206,79,58);">
+					<img src="https://pic.51zxw.net/Contents/Images/pic7.jpg" />
+					<p>广告/平面设计人员</p>
+				</a>
+				<a href="#" style="background: RGB(58,135,206);">
+					<img src="https://pic.51zxw.net/Contents/Images/pic8.jpg" />
+					<p>室内设计师</p>
+				</a>
+				
+				
+			</div>
+			
+			<div class="ms-box clearfix"id="bbb">
+				<a href="#" style="background: RGB(235,151,19);">
+					<img src="https://pic.51zxw.net/Contents/Images/pic9.jpg" />
+					<p>文秘/办公人员</p>
+				</a>					
+				<a href="#" style="background: RGB(118,48,158);">
+					<img src="https://pic.51zxw.net/Contents/Images/pic10.jpg" />
+					<p>会计从业人员</p>
+				</a>
+				<a href="#" style="background: RGB(143,183,48);">
+					<img src="https://pic.51zxw.net/Contents/Images/pic11.jpg" />
+					<p>广告/平面设计人员</p>
+				</a>
+				<a href="#" style="background: RGB(206,58,65);">
+					<img src="https://pic.51zxw.net/Contents/Images/pic12.jpg" />
+					<p>室内设计师</p>
+				</a>
+			</div>
+			
+			<div id="nav">
+					<p class="active"></p>
+					<p></p>
+			</div>
+		</div>
+	</div>
+	<!--名师简介结束-->
+	</body>
+</html>

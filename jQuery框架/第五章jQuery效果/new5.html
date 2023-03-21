@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>调整到指定不透明度</title>
+		<style type="text/css">
+			#btn{width: 200px;height: 40px;}
+			img{display: none;}
+		</style>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#btn").click(function(){
+					//淡入淡出：通过元素透明度(opacity)的变化动态地显示或隐藏元素
+					//fadeTo()	调整到指定不透明度
+					//有四个可选参数：
+					//1.速度：慢速‘slow’	正常‘normal’	快速‘fast，	毫秒数(必须有)
+					//2.透明度：(必须有) 0至1之间表示透明度的数字，默认为0(全透明)
+					//3.切换效果：意义不大	默认	摆动 “swing”	直线“linear”
+					//4.动画完成执行的函数
+					$("#sun").fadeTo('8000',0.3);
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<button id="btn">按钮</button>
+		<br /><br />
+		<img id="sun" src="img/sun.jpg" width="500px"/>
+	</body>
+</html>

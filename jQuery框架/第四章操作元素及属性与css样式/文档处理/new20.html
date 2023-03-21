@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>文档处理插入</title>
+		<style type="text/css">
+			#box{
+				width: 200px;height: 200px;border: 2px solid black;
+				margin: 50px auto;text-align: center;
+			}
+			span{display: block;}
+			p{width: 200px;height: 30px;margin: 20px auto;background: black;color: #fff;}
+			button{
+				width: 200px;height: 50px;margin: 0 auto;display: block;
+			}
+		</style>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				//外部追加
+				$("button").click(function(){
+//					//向元素内最后追加内容 after()
+//					$("#box span").after("<span style='color: red;'>我要学习jQuery4</span>");
+//					$("#box span").eq(1).after("<span style='color: red;'>我要学习jQuery4</span>");
+//					$("#box span").eq(2).append($("p"));	//原来的元素会消失
+
+					//把元素追加到指定的元素内部最后 insertAfter()
+//					$("<span style='color: red;'>我要学习jQuery4</span>").insertAfter($("#box span").eq(2));
+
+//					$("p").insertAfter($("#box span").eq(3));	//原来的元素会消失
+//					
+
+					//向元素内最前追加内容 before()
+//					$("#box span").eq(2).before("<span style='color: red;'>我要学习jQuery4</span>");
+//					$("#box span").eq(2).before($("p"));
+
+					//把元素追加到指定的元素内部的最前方insertBefore()
+//					$("<span style='color: red;'>我要学习jQuery4</span>").insertBefore($("#box span").eq(2));
+					$("p").insertBefore($("#box span").eq(2));
+//					
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<span>我要学习jQuery0</span>
+			<span>我要学习jQuery1</span>
+			<span>我要学习jQuery2</span>
+			<span>我要学习jQuery3</span>
+		</div>
+		<p>我是追加的元素</p>
+		<button>点击</button>
+	</body>
+</html>

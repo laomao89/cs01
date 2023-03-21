@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>文件处理：替换</title>
+		<style type="text/css">
+			#box{
+				width: 200px;height: 200px;border: 2px solid black;
+				margin: 50px auto;text-align: center;
+			}
+			span{display: block;}
+			p{width: 200px;height: 30px;margin: 20px auto;background: black;color: #fff;}
+			button{
+				width: 200px;height: 50px;margin: 0 auto;display: block;
+			}
+		</style>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("button").click(function(){
+					//将每一个匹配的元素替换成指定的内容 replaceWith()
+//					$("#box  span ").replaceWith("<span style='color: red;'>我要学习jQuery4</span>");	//每一个box里的span元素都会被指定的内容替换掉
+//					$("#box span.zxw1").replaceWith($("p"));//替换和被替换都会消失
+					
+					//用指定的内容替换每一个匹配的元素 replaceAll()
+//					$("<span style='color: red;'>我要学习jQuery4</span>").replaceAll($("#box span").eq(2));
+					$("p").replaceAll($("#box span").eq(2));
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<span>我要学习jQuery0</span>
+			<span class="zxw1">我要学习jQuery1</span>
+			<span>我要学习jQuery2</span>
+			<span>我要学习jQuery3</span>
+		</div>
+		<p>我是追加的元素</p>
+		<button>点击</button>
+	</body>
+</html>

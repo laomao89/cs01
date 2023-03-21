@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>自定义动画</title>
+		<style type="text/css">
+			#btn{width: 200px;height: 40px;}
+			/*img{display: none;}*/
+		</style>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				$("#btn").click(function(){
+					//animate()自定义动画
+						//1.一组动画最终样式的属性
+						//2.速度(动画完成的时间):毫秒数
+						//3.动画效果:默认  变速"swing"，匀速"linear"
+						//4.动画完成执行的函数
+					
+					//第一个参数
+//					$("#sun").animate({
+//						width:'800px',
+//						height:'550px',
+//						opacity:'0.7'
+//						});
+
+					//第二个参数
+//					$("#sun").animate({
+//						width:'800px',
+//						height:'550px',
+//						opacity:'0.7'
+//						},3000);
+						
+					
+					//第四个参数
+//					$("#sun").animate({
+//						width:'800px',
+//						height:'550px',
+//						opacity:'0.7'
+//						},3000,function(){
+//							document.write('我是diy动画');
+//						});
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<button id="btn">按钮</button>
+		<br /><br />
+		<img id="sun" src="img/sun.jpg" width="500px"/>
+	</body>
+</html>

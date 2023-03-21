@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>数据验证并加载到页面</title>
+		<style type="text/css">
+			h1{margin: 0 auto;text-align: center;}
+			#bbb{width: 500px;margin: 50px auto;}
+			input{width: 400px;display: block;}
+			#box{width: 500px;margin: 50px auto;display: none;}
+			#box span{color: blue;font-weight: 700;}
+			
+		</style>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				 $("#an").click(function(){
+				 	$.ajax({
+				 		type:"post",	//Ajax请求使用post方式
+				 		url:"http://127.0.0.1/new3.php",			//请求服务器地址
+				 		data:{			//发送到服务器的数据，JSON数据类型
+				 			'uname':$("#uname").val(),
+				 			'password':$("#password").val(),
+				 		},
+				 		dataType:'json',//指定从服务器返回JSON数据类型
+				 		success:function(m){
+//				 			请求成功要执行的代码
+//							参数:从服务器返回的数据
+							console.log(m);
+							$("#box").show().siblings('#bbb').hide();
+							$("#box span:eq(0)").text(m.uname).siblings('span').text(m.money)
+				 		},
+				 		error:function(){
+				 			//请求失败要执行的代码
+				 			alert('请求失败');
+				 		}
+				 	});
+				 })
+			})
+		</script>
+	</head>
+	<body>
+		<h1>登录</h1>
+		<div id="bbb">
+			账户:<input type="text" name="" id="uname" id="uname" value="" />
+			<br /><br />
+			密码:<input type="password" name="password" id="password" value="" />
+			<br /><br />
+			<input id="an" type="submit" value="提交" />
+		</div>
+		
+		<div id="box">
+			欢迎：<span></span>同学 <br />
+			你有：<span></span>金币
+		</div>
+	</body>
+</html>

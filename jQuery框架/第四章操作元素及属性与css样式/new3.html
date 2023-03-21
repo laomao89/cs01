@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>获取和设置元素属性</title>
+		<style type="text/css">
+			#box{
+				width: 200px;height: 200px;border: 2px solid black;
+				margin: 50px auto;text-align: center;
+			}
+			button{
+				width: 200px;height: 50px;margin: 0 auto;display: block;
+			}
+			.zxw{font-size: 30px;}
+			.zxw1{color: red;}
+			.zxw2{font-weight: 900;}
+		</style>
+		<script src="../js/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+				//获取元素属性
+//				$("button").click(function(){
+//					var newa = $("#box p").attr("class");
+//					var newa = $("#box p").attr("title");
+//					console.log(newa);
+//				});
+				
+				//设置元素属性
+				$("button").click(function(){
+//					var newa = $("#box p").attr("class","zxw1");
+//					var newa = $("#box p").attr("title","我开始健步如飞了");
+					var newa = $("#box p").attr({
+						class:"zxw2 zxw1",
+						title:"这又是一份",
+						id:"new"
+					});
+					
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<p class="zxw">我要学习jQuery1</p>
+			<span>我要学习jQuery2</span>
+		</div>
+		<br />
+		<button>点击</button>
+	</body>
+</html>
